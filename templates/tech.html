@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Founder</title>
+    <title>Tech</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
@@ -47,17 +47,18 @@
                 <img src="../assets/location.png" class="w-6 h-6">
                 <p class="text-lg md:text-xl"> Pakistan </p>
                 <img src="../assets/symbol.png" class="w-6 h-6">
-                <p class="text-lg md:text-xl"> 100 pitches/day </p>
+                <p class="text-lg md:text-xl"> Tech Content </p>
             </div>
 
-            <p class="text-lg md:text-xl">I share how a Muslim founder runs,<br>his influencer marketing agency 👇🏼</p>
+            <p class="text-lg md:text-xl">Rust dev who loves coding<br> and shares his tech knowledge 👇🏼</p>
 
             <div class="flex space-x-4 mt-6 justify-center">
-                <a href="https://youtube.com/@pageroamer" target="_blank"><img src="../assets/youtube.png" class="w-8 h-8 -mt-1 hover:scale-110 transform transition-transform duration-200"></a>
+                <a href="https://youtube.com/@coderoamer" target="_blank"><img src="../assets/youtube.png" class="w-8 h-8 -mt-1 hover:scale-110 transform transition-transform duration-200"></a>
                 <a href="https://x.com/ibilalkayy" target="_blank"><img src="../assets/x.png" class="w-6 h-6 hover:scale-110 transform transition-transform duration-200"></a>
                 <a href="https://linkedin.com/in/ibilalkayy" target="_blank"><img src="../assets/linkedin.png" class="w-6 h-6 hover:scale-110 transform transition-transform duration-200"></a>
                 <a href="https://instagram.com/ibilalkayy" target="_blank"><img src="../assets/instagram.png" class="w-6 h-6 hover:scale-110 transform transition-transform duration-200"></a>
                 <a href="https://discord.gg/3DMA4DJs" target="_blank"><img src="../assets/discord.png" class="w-8 h-8 -mt-1 hover:scale-110 transform transition-transform duration-200"></a>
+                <a href="https://ibilalkayy.hashnode.dev/" target="_blank"><img src="../assets/hashnode.png" class="w-6 h-6 -mt-1/2 hover:scale-110 transform transition-transform duration-200"></a>
             </div>
 
             <div class="relative mt-12">
@@ -78,16 +79,43 @@
         <!-- Second section (scrollable) -->
         <div class="w-full h-screen overflow-y-scroll">
             <div>
-                <h1 class="font-bold text-5xl text-center mt-8 -mt-5">Founder Mode</h1>
+                <h1 class="font-bold text-5xl text-center mt-8 -mt-5">Tech Mode</h1>
             </div>
-            <div class="flex flex-col md:flex-row justify-center mt-16">
-                <div class="bg-white w-full md:w-3/5 min-h-[50vh] rounded-3xl p-6 pt-4 shadow-xl">
-                     <canvas id="roamerProgressChart" class="mt-4"></canvas>
+            <!-- Section 1 -->
+            <div class="flex flex-col md:flex-row md:space-x-28 justify-center mt-16">
+                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-6 pt-4 shadow-xl mt-10 md:mt-0">
+                    <canvas id="prayerProgressChart" class="mt-4"></canvas>
+                </div>
+                
+                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-6 pt-4 shadow-xl mt-10 md:mt-0">
+                    <canvas id="hifzProgressChart" class="mt-4"></canvas>
                 </div>
             </div>
-        </div>    
+        
+            <!-- Section 2 -->
+            <div class="flex flex-col md:flex-row md:space-x-28 justify-center mt-16">
+                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-6 pt-4 shadow-xl mt-10 md:mt-0">
+                    <canvas id="islamicKnowledgeChart" class="mt-4"></canvas>
+                </div>
+        
+                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-6 pt-4 shadow-xl mt-10 md:mt-0">
+                    <canvas id="selfReflectionChart" class="mt-4"></canvas>
+                </div>
+            </div>
+        
+            <!-- Section 3 -->
+            <div class="flex flex-col md:flex-row md:space-x-28 justify-center mt-16 mb-16">
+                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-6 pt-4 shadow-xl mt-10 md:mt-0">
+                    <canvas id="avoidSinsChart" class="mt-4"></canvas>
+                </div>
+        
+                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-6 pt-4 shadow-xl mt-10 md:mt-0">
+                    <canvas id="zikrChart" class="mt-4"></canvas>
+                </div>
+            </div>
+        </div>        
     </div>
-
+    
     <script>
         function redirectToPage(selectElement) {
             var selectedPage = selectElement.value;
@@ -97,7 +125,6 @@
             // Update dropdown to show the chosen page, if needed
             selectElement.value = selectedPage;
         }
-
         function createChart(canvasId, labels, data, label) {
             const ctx = document.getElementById(canvasId).getContext('2d');
             
@@ -130,9 +157,29 @@
             });
         }
 
-        const roamerLabels = ['Fri', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu'];
-        const roamerData = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120];
-        createChart('roamerProgressChart', roamerLabels, roamerData, 'Roamer Progress');
+        const prayerLabels = ['Fri', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu'];
+        const prayerData = [2, 3, 5, 4, 5, 3, 4];
+        createChart('prayerProgressChart', prayerLabels, prayerData, 'Prayer Progress');
+
+        const hifzLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const hifzData = [100, 150, 200, 250, 300, 350, 400, 250, 500, 550, 600, 650];
+        createChart('hifzProgressChart', hifzLabels, hifzData, 'Hifz Progress');
+
+        const knowledgeLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const knowledgeData = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120];
+        createChart('islamicKnowledgeChart', knowledgeLabels, knowledgeData, 'Islamic Knowledge Progress');
+
+        const reflectionLabels = ['Gratitude', 'Behaviour', 'Desires', 'Prayer', 'Niyyah'];
+        const reflectionData = [1, 2, 3, 4, 5];
+        createChart('selfReflectionChart', reflectionLabels, reflectionData, 'Self Reflection Progress');
+
+        const sinsLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const sinsData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+        createChart('avoidSinsChart', sinsLabels, sinsData, 'Avoid Sins Progress');
+
+        const zikrLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const zikrData = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120];
+        createChart('zikrChart', zikrLabels, zikrData, 'Zikr Progress');
     </script>
 </body>
 
