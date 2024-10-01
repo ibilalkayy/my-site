@@ -7,6 +7,7 @@
     
     <title>Founder</title>
 
+    <link rel="icon" type="image/x-icon" href="assets/pic.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="styles/styles.css" rel="stylesheet">
@@ -98,7 +99,7 @@
             selectElement.value = selectedPage;
         }
 
-        function createChart(canvasId, labels, data, label) {
+        function createChart(canvasId, labels, data, label, xAxisTitle, yAxisTitle) {
             const ctx = document.getElementById(canvasId).getContext('2d');
             
             return new Chart(ctx, {
@@ -117,22 +118,28 @@
                 options: {
                     responsive: true,
                     scales: {
-                        y: {
-                            beginAtZero: true,
-                        },
                         x: {
                             title: {
                                 display: true,
-                            },
+                                text: xAxisTitle, 
+                            }
                         },
-                    },
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: yAxisTitle, 
+                            }
+                        }
+                    }
                 }
             });
         }
 
-        const roamerLabels = ['Fri', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu'];
-        const roamerData = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120];
-        createChart('roamerProgressChart', roamerLabels, roamerData, 'Roamer Progress');
+
+        const roamerLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+        const roamerData = [0, 0, 0, 0, 0, 0, 0];
+        createChart('roamerProgressChart', roamerLabels, roamerData, 'Roamer Cafe Progress', 'Days of the Week', 'Number of pitches');
     </script>
 </body>
 

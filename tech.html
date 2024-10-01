@@ -7,6 +7,7 @@
     
     <title>Tech</title>
 
+    <link rel="icon" type="image/x-icon" href="assets/pic.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="styles/styles.css" rel="stylesheet">
@@ -50,7 +51,12 @@
                 <p class="text-lg md:text-xl"> Tech Content </p>
             </div>
 
-            <p class="text-lg md:text-xl">Rust dev who loves coding<br> and shares his tech knowledge 👇🏼</p>
+            <p class="text-lg md:text-xl">Rust dev who loves coding <br> and shares his tech knowledge 👇🏼</p>
+
+            <!-- <div class="flex py-6 justify-center">
+                <input type="text" placeholder="Your email..." class="border border-black rounded-s-lg p-2">
+                <button class="bg-black text-lg md:text-xl text-white px-4 py-2 rounded-e-lg">Subscribe</button>
+            </div> -->
 
             <div class="flex space-x-4 mt-6 justify-center">
                 <a href="https://youtube.com/@coderoamer" target="_blank"><img src="assets/youtube.png" class="w-8 h-8 -mt-1 hover:scale-110 transform transition-transform duration-200"></a>
@@ -58,13 +64,12 @@
                 <a href="https://linkedin.com/in/ibilalkayy" target="_blank"><img src="assets/linkedin.png" class="w-6 h-6 hover:scale-110 transform transition-transform duration-200"></a>
                 <a href="https://instagram.com/ibilalkayy" target="_blank"><img src="assets/instagram.png" class="w-6 h-6 hover:scale-110 transform transition-transform duration-200"></a>
                 <a href="https://discord.gg/3DMA4DJs" target="_blank"><img src="assets/discord.png" class="w-8 h-8 -mt-1 hover:scale-110 transform transition-transform duration-200"></a>
-                <a href="https://ibilalkayy.hashnode.dev/" target="_blank"><img src="assets/hashnode.png" class="w-6 h-6 -mt-1/2 hover:scale-110 transform transition-transform duration-200"></a>
             </div>
 
             <div class="relative mt-12">
                 <select name="pages" id="pageSelect" onchange="redirectToPage(this)" class="appearance-none border rounded-3xl bg-black text-white text-lg p-3 pr-12 w-full pl-8">
                     <option value="" class="bg-black text-white">Select a page...</option>
-                    <option value="index.html" class="bg-black text-white">Islamic Mode</option>
+                    <option value="index.html" class="bg-black text-white">Tech Mode</option>
                     <option value="founder.html" class="bg-black text-white">Founder Mode</option>
                     <option value="tech.html" class="bg-black text-white">Tech Mode</option>
                 </select>
@@ -79,38 +84,28 @@
         <!-- Second section (scrollable) -->
         <div class="w-full h-screen overflow-y-scroll">
             <div>
-                <h1 class="font-bold text-5xl text-center mt-8 -mt-5">Tech Mode</h1>
+                <h1 class="font-bold text-5xl text-center mt-8 -mt-5">Islamic Mode</h1>
             </div>
+        
             <!-- Section 1 -->
             <div class="flex flex-col md:flex-row md:space-x-28 justify-center mt-16">
-                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-6 pt-4 shadow-xl mt-10 md:mt-0">
-                    <canvas id="prayerProgressChart" class="mt-4"></canvas>
+                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-8 pt-4 shadow-xl mt-10 md:mt-0">
+                    <canvas id="videosProgressChart" class="mt-4"></canvas>
                 </div>
-                
-                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-6 pt-4 shadow-xl mt-10 md:mt-0">
-                    <canvas id="hifzProgressChart" class="mt-4"></canvas>
+        
+                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-8 pt-4 shadow-xl mt-10 md:mt-0">
+                    <canvas id="blogsProgressChart" class="mt-4"></canvas>
                 </div>
             </div>
         
             <!-- Section 2 -->
-            <div class="flex flex-col md:flex-row md:space-x-28 justify-center mt-16">
-                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-6 pt-4 shadow-xl mt-10 md:mt-0">
-                    <canvas id="islamicKnowledgeChart" class="mt-4"></canvas>
-                </div>
-        
-                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-6 pt-4 shadow-xl mt-10 md:mt-0">
-                    <canvas id="selfReflectionChart" class="mt-4"></canvas>
-                </div>
-            </div>
-        
-            <!-- Section 3 -->
             <div class="flex flex-col md:flex-row md:space-x-28 justify-center mt-16 mb-16">
-                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-6 pt-4 shadow-xl mt-10 md:mt-0">
-                    <canvas id="avoidSinsChart" class="mt-4"></canvas>
+                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-8 pt-4 shadow-xl mt-10 md:mt-0">
+                    <canvas id="githubProgressChart" class="mt-4"></canvas>
                 </div>
         
-                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-6 pt-4 shadow-xl mt-10 md:mt-0">
-                    <canvas id="zikrChart" class="mt-4"></canvas>
+                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-8 pt-4 shadow-xl mt-10 md:mt-0">
+                    <canvas id="postsProgressChart" class="mt-4"></canvas>
                 </div>
             </div>
         </div>        
@@ -125,7 +120,7 @@
             // Update dropdown to show the chosen page, if needed
             selectElement.value = selectedPage;
         }
-        function createChart(canvasId, labels, data, label) {
+        function createChart(canvasId, labels, data, label, xAxisTitle, yAxisTitle) {
             const ctx = document.getElementById(canvasId).getContext('2d');
             
             return new Chart(ctx, {
@@ -144,42 +139,39 @@
                 options: {
                     responsive: true,
                     scales: {
-                        y: {
-                            beginAtZero: true,
-                        },
                         x: {
                             title: {
                                 display: true,
-                            },
+                                text: xAxisTitle, 
+                            }
                         },
-                    },
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: yAxisTitle, 
+                            }
+                        }
+                    }
                 }
             });
         }
 
-        const prayerLabels = ['Fri', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu'];
-        const prayerData = [2, 3, 5, 4, 5, 3, 4];
-        createChart('prayerProgressChart', prayerLabels, prayerData, 'Prayer Progress');
+        const videosLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const videosData = [32, 33, 31, 32, 29, 34, 35, 33, 32, 0, 0, 0];
+        createChart('videosProgressChart', videosLabels, videosData, 'Videos Creation Progress', 'Months of the Year', 'Number of Videos');
 
-        const hifzLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-        const hifzData = [100, 150, 200, 250, 300, 350, 400, 250, 500, 550, 600, 650];
-        createChart('hifzProgressChart', hifzLabels, hifzData, 'Hifz Progress');
+        const blogsLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const blogsData = [2, 3, 4, 0, 1, 3, 2, 3, 1, 0, 0, 0];
+        createChart('blogsProgressChart', blogsLabels, blogsData, 'Blogs Written Progress', 'Months of the Year', 'Number of Blogs');
 
-        const knowledgeLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-        const knowledgeData = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120];
-        createChart('islamicKnowledgeChart', knowledgeLabels, knowledgeData, 'Islamic Knowledge Progress');
+        const githubLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+        const githubData = [3, 0, 0, 0, 0, 0, 0];
+        createChart('githubProgressChart', githubLabels, githubData, 'GitHub Commit Progress', 'Days of the Week', 'Number of Pushes');
 
-        const reflectionLabels = ['Gratitude', 'Behaviour', 'Desires', 'Prayer', 'Niyyah'];
-        const reflectionData = [1, 2, 3, 4, 5];
-        createChart('selfReflectionChart', reflectionLabels, reflectionData, 'Self Reflection Progress');
-
-        const sinsLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-        const sinsData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-        createChart('avoidSinsChart', sinsLabels, sinsData, 'Avoid Sins Progress');
-
-        const zikrLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-        const zikrData = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120];
-        createChart('zikrChart', zikrLabels, zikrData, 'Zikr Progress');
+        const postsLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+        const postsData = [2, 0, 0, 0, 0, 0, 0];
+        createChart('postsProgressChart', postsLabels, postsData, 'Community Posts Progress', 'Days of the Week', 'Number of Posts');
     </script>
 </body>
 

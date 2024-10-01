@@ -7,6 +7,7 @@
     
     <title>Islamic</title>
 
+    <link rel="icon" type="image/x-icon" href="assets/pic.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="styles/styles.css" rel="stylesheet">
@@ -87,33 +88,33 @@
             </div>
             <!-- Section 1 -->
             <div class="flex flex-col md:flex-row md:space-x-28 justify-center mt-16">
-                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-6 pt-4 shadow-xl mt-10 md:mt-0">
+                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-8 pt-4 shadow-xl mt-10 md:mt-0">
                     <canvas id="prayerProgressChart" class="mt-4"></canvas>
                 </div>
                 
-                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-6 pt-4 shadow-xl mt-10 md:mt-0">
+                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-8 pt-4 shadow-xl mt-10 md:mt-0">
                     <canvas id="hifzProgressChart" class="mt-4"></canvas>
                 </div>
             </div>
         
             <!-- Section 2 -->
             <div class="flex flex-col md:flex-row md:space-x-28 justify-center mt-16">
-                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-6 pt-4 shadow-xl mt-10 md:mt-0">
+                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-8 pt-4 shadow-xl mt-10 md:mt-0">
                     <canvas id="islamicKnowledgeChart" class="mt-4"></canvas>
                 </div>
         
-                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-6 pt-4 shadow-xl mt-10 md:mt-0">
+                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-8 pt-4 shadow-xl mt-10 md:mt-0">
                     <canvas id="selfReflectionChart" class="mt-4"></canvas>
                 </div>
             </div>
         
             <!-- Section 3 -->
             <div class="flex flex-col md:flex-row md:space-x-28 justify-center mt-16 mb-16">
-                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-6 pt-4 shadow-xl mt-10 md:mt-0">
+                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-8 pt-4 shadow-xl mt-10 md:mt-0">
                     <canvas id="avoidSinsChart" class="mt-4"></canvas>
                 </div>
         
-                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-6 pt-4 shadow-xl mt-10 md:mt-0">
+                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-8 pt-4 shadow-xl mt-10 md:mt-0">
                     <canvas id="zikrChart" class="mt-4"></canvas>
                 </div>
             </div>
@@ -129,7 +130,7 @@
             // Update dropdown to show the chosen page, if needed
             selectElement.value = selectedPage;
         }
-        function createChart(canvasId, labels, data, label) {
+        function createChart(canvasId, labels, data, label, xAxisTitle, yAxisTitle) {
             const ctx = document.getElementById(canvasId).getContext('2d');
             
             return new Chart(ctx, {
@@ -148,42 +149,47 @@
                 options: {
                     responsive: true,
                     scales: {
-                        y: {
-                            beginAtZero: true,
-                        },
                         x: {
                             title: {
                                 display: true,
-                            },
+                                text: xAxisTitle, 
+                            }
                         },
-                    },
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: yAxisTitle, 
+                            }
+                        }
+                    }
                 }
             });
         }
 
-        const prayerLabels = ['Fri', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu'];
-        const prayerData = [2, 3, 5, 4, 5, 3, 4];
-        createChart('prayerProgressChart', prayerLabels, prayerData, 'Prayer Progress');
+        const prayerLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+        const prayerData = [5, 5, 0, 0, 0, 0, 0];
+        createChart('prayerProgressChart', prayerLabels, prayerData, 'Prayer Progress', 'Days of the Week', 'Number of Prayers');
 
         const hifzLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-        const hifzData = [100, 150, 200, 250, 300, 350, 400, 250, 500, 550, 600, 650];
-        createChart('hifzProgressChart', hifzLabels, hifzData, 'Hifz Progress');
+        const hifzData = [20, 30, 10, 15, 8, 14, 18, 20, 10, 0, 0, 0];
+        createChart('hifzProgressChart', hifzLabels, hifzData, 'Hifz Progress', 'Months of the Year', 'Number of Pages');
 
-        const knowledgeLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-        const knowledgeData = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120];
-        createChart('islamicKnowledgeChart', knowledgeLabels, knowledgeData, 'Islamic Knowledge Progress');
+        const knowledgeLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+        const knowledgeData = [0, 0, 0, 0, 0, 0, 0];
+        createChart('islamicKnowledgeChart', knowledgeLabels, knowledgeData, 'Islamic Knowledge Progress', 'Days of the Week', 'Number of Pages');
 
         const reflectionLabels = ['Gratitude', 'Behaviour', 'Desires', 'Prayer', 'Niyyah'];
-        const reflectionData = [1, 2, 3, 4, 5];
-        createChart('selfReflectionChart', reflectionLabels, reflectionData, 'Self Reflection Progress');
+        const reflectionData = [0, 0, 0, 0, 0, 0, 0];
+        createChart('selfReflectionChart', reflectionLabels, reflectionData, 'Self Reflection Progress', 'Attitudes', 'Number of Days');
 
-        const sinsLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-        const sinsData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-        createChart('avoidSinsChart', sinsLabels, sinsData, 'Avoid Sins Progress');
+        const sinsLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+        const sinsData = [0, 0, 0, 0, 0, 0, 0, 0];
+        createChart('avoidSinsChart', sinsLabels, sinsData, 'Avoid Sins Progress', 'Days of the Week', 'Number of Sins');
 
-        const zikrLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-        const zikrData = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120];
-        createChart('zikrChart', zikrLabels, zikrData, 'Zikr Progress');
+        const zikrLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+        const zikrData = [0, 500, 0, 0, 0, 0, 0];
+        createChart('zikrChart', zikrLabels, zikrData, 'Zikr Progress', 'Days of the Week', 'Number of Repetition');
     </script>
 </body>
 
