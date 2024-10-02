@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Islamic</title>
+    <title>Muslim</title>
 
     <link rel="icon" type="image/x-icon" href="assets/pic.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -70,7 +70,7 @@
             <div class="relative mt-12">
                 <select name="pages" id="pageSelect" onchange="redirectToPage(this)" class="appearance-none border rounded-3xl bg-black text-white text-lg p-3 pr-12 w-full pl-8">
                     <option value="" class="bg-black text-white">Select a page...</option>
-                    <option value="index.html" class="bg-black text-white">Islamic Mode</option>
+                    <option value="index.html" class="bg-black text-white">Muslim Mode</option>
                     <option value="founder.html" class="bg-black text-white">Founder Mode</option>
                     <option value="tech.html" class="bg-black text-white">Tech Mode</option>
                 </select>
@@ -85,15 +85,17 @@
         <!-- Second section (scrollable) -->
         <div class="w-full h-screen overflow-y-scroll">
             <div>
-                <h1 class="font-bold text-5xl text-center mt-8 -mt-5">Islamic Mode</h1>
+                <h1 class="font-bold text-5xl text-center mt-8 -mt-5">Muslim Mode</h1>
             </div>
             <!-- Section 1 -->
             <div class="flex flex-col md:flex-row md:space-x-28 justify-center mt-16">
                 <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-8 pt-4 shadow-xl mt-10 md:mt-0">
+                    <h3 class="text-2xl font-bold text-center -mb-4 -mt-3">Prayer Progress</h3>
                     <canvas id="prayerProgressChart" class="mt-4"></canvas>
                 </div>
                 
                 <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-8 pt-4 shadow-xl mt-10 md:mt-0">
+                    <h3 class="text-2xl font-bold text-center -mb-4 -mt-3">Hifz Progress</h3>
                     <canvas id="hifzProgressChart" class="mt-4"></canvas>
                 </div>
             </div>
@@ -101,10 +103,12 @@
             <!-- Section 2 -->
             <div class="flex flex-col md:flex-row md:space-x-28 justify-center mt-16">
                 <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-8 pt-4 shadow-xl mt-10 md:mt-0">
+                    <h3 class="text-2xl font-bold text-center -mb-4 -mt-3">Islamic Knowledge Progress</h3>
                     <canvas id="islamicKnowledgeChart" class="mt-4"></canvas>
                 </div>
         
                 <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-8 pt-4 shadow-xl mt-10 md:mt-0">
+                    <h3 class="text-2xl font-bold text-center -mb-4 -mt-3">Self Reflection Progress</h3>
                     <canvas id="selfReflectionChart" class="mt-4"></canvas>
                 </div>
             </div>
@@ -112,10 +116,12 @@
             <!-- Section 3 -->
             <div class="flex flex-col md:flex-row md:space-x-28 justify-center mt-16 mb-16">
                 <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-8 pt-4 shadow-xl mt-10 md:mt-0">
+                    <h3 class="text-2xl font-bold text-center -mb-4 -mt-3">Avoiding Sins Progress</h3>
                     <canvas id="avoidSinsChart" class="mt-4"></canvas>
                 </div>
         
                 <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-8 pt-4 shadow-xl mt-10 md:mt-0">
+                    <h3 class="text-2xl font-bold text-center -mb-4 -mt-3">Zikr Progress</h3>
                     <canvas id="zikrChart" class="mt-4"></canvas>
                 </div>
             </div>

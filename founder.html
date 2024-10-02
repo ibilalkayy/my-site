@@ -65,7 +65,7 @@
             <div class="relative mt-12">
                 <select name="pages" id="pageSelect" onchange="redirectToPage(this)" class="appearance-none border rounded-3xl bg-black text-white text-lg p-3 pr-12 w-full pl-8">
                     <option value="" class="bg-black text-white">Select a page...</option>
-                    <option value="index.html" class="bg-black text-white">Islamic Mode</option>
+                    <option value="index.html" class="bg-black text-white">Muslim Mode</option>
                     <option value="founder.html" class="bg-black text-white">Founder Mode</option>
                     <option value="tech.html" class="bg-black text-white">Tech Mode</option>
                 </select>
@@ -84,6 +84,7 @@
             </div>
             <div class="flex flex-col md:flex-row justify-center mt-16">
                 <div class="bg-white w-full md:w-3/5 min-h-[50vh] rounded-3xl p-6 pt-4 shadow-xl">
+                     <h3 class="text-2xl font-bold text-center mb-4 mt-1">Roamer Cafe Progress</h3>
                      <canvas id="roamerProgressChart" class="mt-4"></canvas>
                 </div>
             </div>
@@ -139,7 +140,7 @@
 
 
         const roamerLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-        const roamerData = [0, 0, 0, 0, 0, 0, 0];
+        const roamerData = [0, 120, 130, 0, 0, 0, 0];
         createChart('roamerProgressChart', roamerLabels, roamerData, 'Roamer Cafe Progress', 'Days of the Week', 'Number of pitches');
     </script>
 </body>
