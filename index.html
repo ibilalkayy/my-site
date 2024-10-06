@@ -1,203 +1,408 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Muslim</title>
+        <title>Muslim</title>
 
-    <link rel="icon" type="image/x-icon" href="assets/pic.jpg">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-    <link href="styles/styles.css" rel="stylesheet">
-    <script src="https://unpkg.com/htmx.org@2.0.2" integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <link rel="icon" type="image/x-icon" href="assets/pic.jpg" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+            rel="stylesheet"
+        />
+        <link href="styles/styles.css" rel="stylesheet" />
+        <script
+            src="https://unpkg.com/htmx.org@2.0.2"
+            integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        anton: ['Anton', 'sans-serif'],
-                        karma: ['Karma', 'serif'],
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            anton: ["Anton", "sans-serif"],
+                            karma: ["Karma", "serif"],
+                        },
+                        keyframes: {
+                            bounce: {
+                                "0%, 100%": { transform: "translateY(0)" },
+                                "50%": { transform: "translateY(10px)" },
+                            },
+                        },
+                        animation: {
+                            "bounce-down": "bounce 1s ease-in-out infinite",
+                        },
                     },
-                    keyframes: {
-                        bounce: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(10px)' },
-                        }
-                    },
-                    animation: {
-                        'bounce-down': 'bounce 1s ease-in-out infinite'
-                    }
-                }
-            }
-        }
-    </script>
-</head>
+                },
+            };
+        </script>
+    </head>
 
-<body>
-    <!-- First Section -->
-    <div class="flex flex-col md:flex-row bg-gray-200 overflow-y-auto">
-        <div class="w-full md:w-4/12 p-6 h-auto md:h-screen flex flex-col items-center text-center sticky top-0">
-            <img src="assets/pic.jpg" class="max-w-96 max-h-96 rounded-full p-12">
-            <h1 class="font-anton text-4xl md:text-6xl -mt-4">Bilal Khan</h1>
+    <body>
+        <!-- First Section -->
+        <div class="flex flex-col md:flex-row bg-gray-200 overflow-y-auto">
+            <div
+                class="w-full md:w-4/12 p-6 h-auto md:h-screen flex flex-col items-center text-center sticky top-0"
+            >
+                <img
+                    src="assets/pic.jpg"
+                    class="max-w-96 max-h-96 rounded-full p-12"
+                />
+                <h1 class="font-anton text-4xl md:text-6xl -mt-4">
+                    Bilal Khan
+                </h1>
 
-            <div class="flex space-x-2 py-6 justify-center">
-                <img src="assets/location.png" class="w-6 h-6">
-                <p class="text-lg md:text-xl"> Pakistan </p>
-                <img src="assets/symbol.png" class="w-6 h-6">
-                <p class="text-lg md:text-xl"> 6 tasks/day </p>
+                <div class="flex space-x-2 py-6 justify-center">
+                    <img src="assets/location.png" class="w-6 h-6" />
+                    <p class="text-lg md:text-xl">Pakistan</p>
+                    <img src="assets/symbol.png" class="w-6 h-6" />
+                    <p class="text-lg md:text-xl">6 tasks/day</p>
+                </div>
+
+                <p class="text-lg md:text-xl">
+                    I share my Muslim identity,<br />Islamic goals, and daily
+                    progress 👇🏼
+                </p>
+
+                <!-- <div class="flex py-6 justify-center">
+                    <input type="text" placeholder="Your email..." class="border border-black rounded-s-lg p-2">
+                    <button class="bg-black text-lg md:text-xl text-white px-4 py-2 rounded-e-lg">Subscribe</button>
+                </div> -->
+
+                <div class="flex space-x-4 mt-6 justify-center">
+                    <a href="https://youtube.com/@pageroamer" target="_blank"
+                        ><img
+                            src="assets/youtube.png"
+                            class="w-8 h-8 -mt-1 hover:scale-110 transform transition-transform duration-200"
+                    /></a>
+                    <a href="https://x.com/ibilalkayy" target="_blank"
+                        ><img
+                            src="assets/x.png"
+                            class="w-6 h-6 hover:scale-110 transform transition-transform duration-200"
+                    /></a>
+                    <a href="https://linkedin.com/in/ibilalkayy" target="_blank"
+                        ><img
+                            src="assets/linkedin.png"
+                            class="w-6 h-6 hover:scale-110 transform transition-transform duration-200"
+                    /></a>
+                    <a href="https://instagram.com/ibilalkayy" target="_blank"
+                        ><img
+                            src="assets/instagram.png"
+                            class="w-6 h-6 hover:scale-110 transform transition-transform duration-200"
+                    /></a>
+                    <a href="https://discord.gg/Bn7A4Bg6" target="_blank"
+                        ><img
+                            src="assets/discord.png"
+                            class="w-8 h-8 -mt-1 hover:scale-110 transform transition-transform duration-200"
+                    /></a>
+                    <a href="https://wise.com/pay/me/bilalk745" target="_blank"
+                        ><img
+                            src="assets/wise.png"
+                            class="w-8 h-7 -mt-0.5 hover:scale-110 transform transition-transform duration-200"
+                    /></a>
+                </div>
+
+                <div class="relative mt-12">
+                    <select
+                        name="pages"
+                        id="pageSelect"
+                        onchange="redirectToPage(this)"
+                        class="appearance-none border rounded-3xl bg-black text-white text-lg p-3 pr-12 w-full pl-8"
+                    >
+                        <option value="" class="bg-black text-white">
+                            Select a page...
+                        </option>
+                        <option value="index.html" class="bg-black text-white">
+                            Muslim Mode
+                        </option>
+                        <option
+                            value="founder.html"
+                            class="bg-black text-white"
+                        >
+                            Founder Mode
+                        </option>
+                        <option value="tech.html" class="bg-black text-white">
+                            Tech Mode
+                        </option>
+                    </select>
+                    <div
+                        class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4"
+                    >
+                        <svg
+                            class="w-6 h-6 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M19 9l-7 7-7-7"
+                            ></path>
+                        </svg>
+                    </div>
+                </div>
             </div>
 
-            <p class="text-lg md:text-xl">I share my Muslim identity,<br>Islamic goals, and daily progress 👇🏼</p>
+            <!-- Second section (scrollable) -->
+            <div class="w-full h-screen overflow-y-scroll">
+                <div>
+                    <h1 class="font-bold text-5xl text-center mt-8 -mt-5">
+                        Muslim Mode
+                    </h1>
+                </div>
+                <!-- Section 1 -->
+                <div
+                    class="flex flex-col md:flex-row md:space-x-28 justify-center mt-16"
+                >
+                    <div
+                        class="bg-white w-full md:w-2/5 h-80 rounded-3xl p-8 pt-8 shadow-xl mt-10 md:mt-0"
+                    >
+                        <h3 class="text-2xl font-bold text-center -mb-4 -mt-3">
+                            Prayer Progress
+                        </h3>
+                        <canvas id="prayerProgressChart" class="mt-4"></canvas>
+                    </div>
 
-            <!-- <div class="flex py-6 justify-center">
-                <input type="text" placeholder="Your email..." class="border border-black rounded-s-lg p-2">
-                <button class="bg-black text-lg md:text-xl text-white px-4 py-2 rounded-e-lg">Subscribe</button>
-            </div> -->
+                    <div
+                        class="bg-white w-full md:w-2/5 h-80 rounded-3xl p-8 pt-8 shadow-xl mt-10 md:mt-0"
+                    >
+                        <h3 class="text-2xl font-bold text-center -mb-4 -mt-3">
+                            Hifz Progress
+                        </h3>
+                        <canvas id="hifzProgressChart" class="mt-4"></canvas>
+                    </div>
+                </div>
 
-            <div class="flex space-x-4 mt-6 justify-center">
-                <a href="https://youtube.com/@pageroamer" target="_blank"><img src="assets/youtube.png" class="w-8 h-8 -mt-1 hover:scale-110 transform transition-transform duration-200"></a>
-                <a href="https://x.com/ibilalkayy" target="_blank"><img src="assets/x.png" class="w-6 h-6 hover:scale-110 transform transition-transform duration-200"></a>
-                <a href="https://linkedin.com/in/ibilalkayy" target="_blank"><img src="assets/linkedin.png" class="w-6 h-6 hover:scale-110 transform transition-transform duration-200"></a>
-                <a href="https://instagram.com/ibilalkayy" target="_blank"><img src="assets/instagram.png" class="w-6 h-6 hover:scale-110 transform transition-transform duration-200"></a>
-                <a href="https://discord.gg/3DMA4DJs" target="_blank"><img src="assets/discord.png" class="w-8 h-8 -mt-1 hover:scale-110 transform transition-transform duration-200"></a>
-                <a href="https://wise.com/pay/me/bilalk745" target="_blank"><img src="assets/wise.png" class="w-8 h-7 -mt-0.5 hover:scale-110 transform transition-transform duration-200"></a>
-            </div>
+                <!-- Section 2 -->
+                <div
+                    class="flex flex-col md:flex-row md:space-x-28 justify-center mt-16"
+                >
+                    <div
+                        class="bg-white w-full md:w-2/5 h-80 rounded-3xl p-8 pt-8 shadow-xl mt-10 md:mt-0"
+                    >
+                        <h3 class="text-2xl font-bold text-center -mb-4 -mt-3">
+                            Islamic Knowledge Progress
+                        </h3>
+                        <canvas
+                            id="islamicKnowledgeChart"
+                            class="mt-4"
+                        ></canvas>
+                    </div>
 
-            <div class="relative mt-12">
-                <select name="pages" id="pageSelect" onchange="redirectToPage(this)" class="appearance-none border rounded-3xl bg-black text-white text-lg p-3 pr-12 w-full pl-8">
-                    <option value="" class="bg-black text-white">Select a page...</option>
-                    <option value="index.html" class="bg-black text-white">Muslim Mode</option>
-                    <option value="founder.html" class="bg-black text-white">Founder Mode</option>
-                    <option value="tech.html" class="bg-black text-white">Tech Mode</option>
-                </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
-                    </svg>
+                    <div
+                        class="bg-white w-full md:w-2/5 h-80 rounded-3xl p-8 pt-8 shadow-xl mt-10 md:mt-0"
+                    >
+                        <h3 class="text-2xl font-bold text-center -mb-4 -mt-3">
+                            Self Reflection Progress
+                        </h3>
+                        <canvas id="selfReflectionChart" class="mt-4"></canvas>
+                    </div>
+                </div>
+
+                <!-- Section 3 -->
+                <div
+                    class="flex flex-col md:flex-row md:space-x-28 justify-center mt-16 mb-16"
+                >
+                    <div
+                        class="bg-white w-full md:w-2/5 h-80 rounded-3xl p-8 pt-8 shadow-xl mt-10 md:mt-0"
+                    >
+                        <h3 class="text-2xl font-bold text-center -mb-4 -mt-3">
+                            Avoiding Sins Progress
+                        </h3>
+                        <canvas id="avoidSinsChart" class="mt-4"></canvas>
+                    </div>
+
+                    <div
+                        class="bg-white w-full md:w-2/5 h-80 rounded-3xl p-8 pt-8 shadow-xl mt-10 md:mt-0"
+                    >
+                        <h3 class="text-2xl font-bold text-center -mb-4 -mt-3">
+                            Zikr Progress
+                        </h3>
+                        <canvas id="zikrChart" class="mt-4"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Second section (scrollable) -->
-        <div class="w-full h-screen overflow-y-scroll">
-            <div>
-                <h1 class="font-bold text-5xl text-center mt-8 -mt-5">Muslim Mode</h1>
-            </div>
-            <!-- Section 1 -->
-            <div class="flex flex-col md:flex-row md:space-x-28 justify-center mt-16">
-                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-8 pt-4 shadow-xl mt-10 md:mt-0">
-                    <h3 class="text-2xl font-bold text-center -mb-4 -mt-3">Prayer Progress</h3>
-                    <canvas id="prayerProgressChart" class="mt-4"></canvas>
-                </div>
-                
-                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-8 pt-4 shadow-xl mt-10 md:mt-0">
-                    <h3 class="text-2xl font-bold text-center -mb-4 -mt-3">Hifz Progress</h3>
-                    <canvas id="hifzProgressChart" class="mt-4"></canvas>
-                </div>
-            </div>
-        
-            <!-- Section 2 -->
-            <div class="flex flex-col md:flex-row md:space-x-28 justify-center mt-16">
-                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-8 pt-4 shadow-xl mt-10 md:mt-0">
-                    <h3 class="text-2xl font-bold text-center -mb-4 -mt-3">Islamic Knowledge Progress</h3>
-                    <canvas id="islamicKnowledgeChart" class="mt-4"></canvas>
-                </div>
-        
-                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-8 pt-4 shadow-xl mt-10 md:mt-0">
-                    <h3 class="text-2xl font-bold text-center -mb-4 -mt-3">Self Reflection Progress</h3>
-                    <canvas id="selfReflectionChart" class="mt-4"></canvas>
-                </div>
-            </div>
-        
-            <!-- Section 3 -->
-            <div class="flex flex-col md:flex-row md:space-x-28 justify-center mt-16 mb-16">
-                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-8 pt-4 shadow-xl mt-10 md:mt-0">
-                    <h3 class="text-2xl font-bold text-center -mb-4 -mt-3">Avoiding Sins Progress</h3>
-                    <canvas id="avoidSinsChart" class="mt-4"></canvas>
-                </div>
-        
-                <div class="bg-white w-full md:w-2/5 h-72 rounded-3xl p-8 pt-4 shadow-xl mt-10 md:mt-0">
-                    <h3 class="text-2xl font-bold text-center -mb-4 -mt-3">Zikr Progress</h3>
-                    <canvas id="zikrChart" class="mt-4"></canvas>
-                </div>
-            </div>
-        </div>        
-    </div>
-    
-    <script>
-        function redirectToPage(selectElement) {
-            var selectedPage = selectElement.value;
-            if (selectedPage) {
-                window.location.href = selectedPage; // Redirect to the selected page
-            }
-            // Update dropdown to show the chosen page, if needed
-            selectElement.value = selectedPage;
-        }
-        function createChart(canvasId, labels, data, label, xAxisTitle, yAxisTitle) {
-            const ctx = document.getElementById(canvasId).getContext('2d');
-            
-            return new Chart(ctx, {
-                type: 'line', // Line chart
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: label,
-                        data: data,
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderWidth: 2,
-                        fill: true, // Fill the area under the line
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                        x: {
-                            title: {
-                                display: true,
-                                text: xAxisTitle, 
-                            }
-                        },
-                        y: {
-                            beginAtZero: true,
-                            title: {
-                                display: true,
-                                text: yAxisTitle, 
-                            }
-                        }
-                    }
+        <script>
+            function redirectToPage(selectElement) {
+                var selectedPage = selectElement.value;
+                if (selectedPage) {
+                    window.location.href = selectedPage; // Redirect to the selected page
                 }
-            });
-        }
+                // Update dropdown to show the chosen page, if needed
+                selectElement.value = selectedPage;
+            }
+            function createChart(
+                canvasId,
+                labels,
+                data,
+                label,
+                xAxisTitle,
+                yAxisTitle,
+            ) {
+                const ctx = document.getElementById(canvasId).getContext("2d");
 
-        const prayerLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-        const prayerData = [5, 5, 0, 0, 0, 0, 0];
-        createChart('prayerProgressChart', prayerLabels, prayerData, 'Prayer Progress', 'Days of the Week', 'Number of Prayers');
+                return new Chart(ctx, {
+                    type: "line", // Line chart
+                    data: {
+                        labels: labels,
+                        datasets: [
+                            {
+                                label: label,
+                                data: data,
+                                borderColor: "rgba(75, 192, 192, 1)",
+                                backgroundColor: "rgba(75, 192, 192, 0.2)",
+                                borderWidth: 2,
+                                fill: true, // Fill the area under the line
+                            },
+                        ],
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: xAxisTitle,
+                                },
+                            },
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: yAxisTitle,
+                                },
+                            },
+                        },
+                    },
+                });
+            }
 
-        const hifzLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-        const hifzData = [20, 30, 10, 15, 8, 14, 18, 20, 10, 0, 0, 0];
-        createChart('hifzProgressChart', hifzLabels, hifzData, 'Hifz Progress', 'Months of the Year', 'Number of Pages');
+            const prayerLabels = [
+                "Mon",
+                "Tue",
+                "Wed",
+                "Thu",
+                "Fri",
+                "Sat",
+                "Sun",
+            ];
+            const prayerData = [5, 5, 5, 5, 5, 5, 5];
+            createChart(
+                "prayerProgressChart",
+                prayerLabels,
+                prayerData,
+                "Prayer Progress",
+                "Days of the Week",
+                "Number of Prayers",
+            );
 
-        const knowledgeLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-        const knowledgeData = [0, 0, 0, 0, 0, 0, 0];
-        createChart('islamicKnowledgeChart', knowledgeLabels, knowledgeData, 'Islamic Knowledge Progress', 'Days of the Week', 'Number of Pages');
+            const hifzLabels = [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec",
+            ];
+            const hifzData = [20, 30, 10, 15, 8, 14, 18, 20, 10, 0, 0, 0];
+            createChart(
+                "hifzProgressChart",
+                hifzLabels,
+                hifzData,
+                "Hifz Progress",
+                "Months of the Year",
+                "Number of Pages",
+            );
 
-        const reflectionLabels = ['Gratitude', 'Behaviour', 'Desires', 'Prayer', 'Niyyah'];
-        const reflectionData = [0, 0, 0, 0, 0, 0, 0];
-        createChart('selfReflectionChart', reflectionLabels, reflectionData, 'Self Reflection Progress', 'Attitudes', 'Number of Days');
+            const knowledgeLabels = [
+                "Mon",
+                "Tue",
+                "Wed",
+                "Thu",
+                "Fri",
+                "Sat",
+                "Sun",
+            ];
+            const knowledgeData = [0, 0, 0, 0, 0, 0, 0];
+            createChart(
+                "islamicKnowledgeChart",
+                knowledgeLabels,
+                knowledgeData,
+                "Islamic Knowledge Progress",
+                "Days of the Week",
+                "Number of Pages",
+            );
 
-        const sinsLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-        const sinsData = [0, 0, 0, 0, 0, 0, 0, 0];
-        createChart('avoidSinsChart', sinsLabels, sinsData, 'Avoid Sins Progress', 'Days of the Week', 'Number of Sins');
+            const reflectionLabels = [
+                "Gratitude",
+                "Behaviour",
+                "Desires",
+                "Prayer",
+                "Niyyah",
+            ];
+            const reflectionData = [0, 0, 0, 0, 0, 0, 0];
+            createChart(
+                "selfReflectionChart",
+                reflectionLabels,
+                reflectionData,
+                "Self Reflection Progress",
+                "Attitudes",
+                "Number of Days",
+            );
 
-        const zikrLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-        const zikrData = [0, 500, 0, 0, 0, 0, 0];
-        createChart('zikrChart', zikrLabels, zikrData, 'Zikr Progress', 'Days of the Week', 'Number of Repetition');
-    </script>
-</body>
+            const sinsLabels = [
+                "Mon",
+                "Tue",
+                "Wed",
+                "Thu",
+                "Fri",
+                "Sat",
+                "Sun",
+            ];
+            const sinsData = [2, 2, 2, 2, 2, 2, 2, 2];
+            createChart(
+                "avoidSinsChart",
+                sinsLabels,
+                sinsData,
+                "Avoid Sins Progress",
+                "Days of the Week",
+                "Number of Sins",
+            );
 
+            const zikrLabels = [
+                "Mon",
+                "Tue",
+                "Wed",
+                "Thu",
+                "Fri",
+                "Sat",
+                "Sun",
+            ];
+            const zikrData = [0, 500, 400, 300, 500, 200, 500];
+            createChart(
+                "zikrChart",
+                zikrLabels,
+                zikrData,
+                "Zikr Progress",
+                "Days of the Week",
+                "Number of Repetition",
+            );
+        </script>
+    </body>
 </html>
